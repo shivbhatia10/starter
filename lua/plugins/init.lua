@@ -16,7 +16,13 @@ return {
     event = "VeryLazy",
     dependencies = { "mason-org/mason.nvim" },
     opts = {
-      ensure_installed = { "rust-analyzer", "stylua", "haskell-language-server", "marksman" },
+      ensure_installed = {
+        "rust-analyzer",
+        "stylua",
+        "haskell-language-server",
+        "marksman",
+        "typescript-language-server",
+      },
     },
   },
 
@@ -25,7 +31,10 @@ return {
     lazy = false,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "rust", "toml", "haskell", "ocaml", "ocaml_interface" })
+      vim.list_extend(
+        opts.ensure_installed,
+        { "rust", "toml", "haskell", "ocaml", "ocaml_interface", "typescript", "tsx" }
+      )
       opts.auto_install = true
 
       -- nvim-treesitter's frozen `master` branch doesn't support Neovim 0.12+;
