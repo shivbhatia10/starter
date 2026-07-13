@@ -27,6 +27,11 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "rust", "toml", "haskell", "ocaml", "ocaml_interface" })
       opts.auto_install = true
+
+      -- nvim-treesitter's frozen `master` branch doesn't support Neovim 0.12+;
+      -- its markdown code-fence injection directive crashes the highlighter on
+      -- Shift+K hovers. Drop markdown injections until NvChad moves to `main`.
+      vim.treesitter.query.set("markdown", "injections", "")
     end,
   },
 
