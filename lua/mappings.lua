@@ -26,6 +26,7 @@ map("n", "<leader>gq", "<cmd>DiffviewClose<CR>", { desc = "diffview: close" })
 
 map("n", "<leader>dd", "<cmd>Trouble diagnostics toggle<CR>", { desc = "trouble diagnostics (workspace)" })
 map("n", "<leader>db", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "trouble diagnostics (buffer)" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action (quick fix)" })
 
 map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "toggle symbol outline" })
 

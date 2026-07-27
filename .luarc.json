@@ -1,0 +1,9 @@
+{
+    "workspace.library": [
+        "/opt/homebrew/Cellar/neovim/0.12.3/share/nvim/runtime/lua",
+        "/Users/shivbhatia/.local/share/nvim/lazy/ui/nvchad_types",
+        "/Users/shivbhatia/.local/share/nvim/lazy/lazy.nvim/lua/lazy",
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
+    ]
+}
