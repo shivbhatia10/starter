@@ -17,7 +17,10 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     opts = {
       ensure_installed = {
-        "rust-analyzer",
+        -- NOTE: deliberately no "rust-analyzer" here. Mason's bin dir is prepended to
+        -- nvim's PATH, so a Mason RA shadows the rustup proxy (~/.cargo/bin/rust-analyzer)
+        -- and breaks proc-macro ABI matching against a pinned rust-toolchain.toml.
+        -- For a minimal-profile pin: rustup component add rust-analyzer --toolchain <X>
         "stylua",
         "haskell-language-server",
         "marksman",
